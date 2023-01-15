@@ -6,15 +6,17 @@ function closeDuplicateTabs() {
   chrome.tabs.query({ currentWindow: true }, function (tabs) {
     let uniqueTabs = {};
     for (let tab of tabs) {
-      if (uniqueTabs[tab.url]) {
+        let tabURL = new URL(tab.url);
+        let domain = tabURL.hostname;
+      if (uniqueTabs[domain]) {
         if (tab.active) {
-          chrome.tabs.remove(uniqueTabs[tab.url]);
-          uniqueTabs[tab.url] = tab.id;
+          chrome.tabs.remove(uniqueTabs[domain]);
+          uniqueTabs[domain] = tab.id;
         } else {
           chrome.tabs.remove(tab.id);
         }
       } else {
-        uniqueTabs[tab.url] = tab.id;
+        uniqueTabs[domain] = tab.id;
       }
     }
   });
