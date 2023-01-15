@@ -1,3 +1,6 @@
+html{
+    border-radius: 20px;
+}
 #close-duplicates-button {
   background-color: rgb(255, 10, 10);
   color: white;
@@ -5,11 +8,14 @@
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
   font-size: 1.1rem;
+  
 }
 #close-duplicates-button:hover {
-  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 #close-duplicates-button:active {
   font-size: 1.1rem;
+  box-shadow: none;
+  transform: translateY(2px);
 }
