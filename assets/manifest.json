@@ -3,7 +3,7 @@
     "name": "Close Duplicate Tabs",
     "description": "A simple extension that closes duplicate tabs with a single button.",
     "version": "1.1",
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "icon.png"
     },
